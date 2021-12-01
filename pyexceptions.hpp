@@ -13,7 +13,10 @@ class OptilogException : public std::exception
 class NotImplementedException : public OptilogException
 {
   public:
+    NotImplementedException(const char* message);
     const char* what() const throw() override;
+  private:
+    std::string msg;
 };
 
 class PythonAPIException : public OptilogException

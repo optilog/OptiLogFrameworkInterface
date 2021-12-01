@@ -1,9 +1,15 @@
 #include <sstream>
 #include "pyexceptions.hpp"
 
+NotImplementedException::NotImplementedException(const char* message){
+    std::ostringstream stringStream;
+    stringStream << "Not implemented exception: " << message;
+    msg = stringStream.str();
+}
+
 const char* NotImplementedException::what() const throw()
 {
-    return "Not implemented exception.";
+    return msg.c_str();
 }
 
 PythonAPIException::PythonAPIException(){
