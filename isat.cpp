@@ -161,6 +161,12 @@ void iSAT::getActivities(std::vector<double>& activities)
     throw NotImplementedException("getActivities");
 }
 
+
+iSAT* iSAT::clone()
+{
+    throw NotImplementedException("clone");
+}
+
 void iSAT::set(const char * key, int value)
 {
     (void) key;
@@ -198,5 +204,5 @@ void iSAT::get(const char * key, Parameter & value)
 
 int iSAT::getVersion()
 {
-    return 2;
+    return 3;
 }

@@ -27,7 +27,7 @@ extern "C" void destroy_isat_solver( iSAT* object ) \
 }     
 
 #define OPTILOG_CONFIG_C_INTERFACE(static_vec)                            \
-extern "C" const void configurable_isat_solver(std::vector<OptilogConfigParameter>* target)  \
+extern "C" void configurable_isat_solver(std::vector<OptilogConfigParameter>* target)  \
 {                                                                         \
   copy(static_vec.begin(), static_vec.end(), back_inserter(*target));     \
 }

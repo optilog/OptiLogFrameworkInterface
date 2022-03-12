@@ -86,10 +86,8 @@ public:
   virtual E_STATE solveLimit(const std::vector<int>& assumptions);
   /*!
   Enables the `incremental` mode in solvers of the `Glucose` family.
-
-  \b Warning:
-    SAT Solvers implementing the iSAT interface are expected to be incremental.
-    This method doesn't have any effect on that characteristic of the interface.
+  This mode enables changes in the LBD heuristic that may help improve performance in incremental sat solving.
+  For more details see "Improving Glucose for Incremental SAT Solving with Assumptions: Application to MUS Extraction".
   */
   virtual void setIncremental();
   /*!
@@ -190,6 +188,11 @@ public:
   \param activities Vector to store the activities of the variables in order
   */
   virtual void getActivities(std::vector<double>& activities);
+  /*!
+  Clones the solver, including the loaded clauses and internal state
+  \param solver Solver to clone
+  */
+  virtual iSAT* clone();
 
   /*!
   Sets the value for a given parameter.
