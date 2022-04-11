@@ -1,0 +1,1 @@
+-D__STDC_LIMIT_MACROS -D__STDC_FORMAT_MACROS -Wall -Wno-parentheses -O3

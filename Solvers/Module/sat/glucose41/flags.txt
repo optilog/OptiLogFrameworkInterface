@@ -1,0 +1,1 @@
+-std=c++11 -fPIC -Wall -Wno-deprecated -fno-strict-aliasing -DINCREMENTAL -O3 -DNDEBUG
